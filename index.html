@@ -281,7 +281,30 @@
         <h1>Merci pour votre participation !</h1>
         <p>Vos réponses ont été enregistrées.</p>
     </div>
-
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+    <script type="module">
+	  // Import the functions you need from the SDKs you need
+	  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+	  // TODO: Add SDKs for Firebase products that you want to use
+	  // https://firebase.google.com/docs/web/setup#available-libraries
+	
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  const firebaseConfig = {
+	    apiKey: "AIzaSyDj0L32CgxECBVLdqK2lxvcmwGWMEEEmuk",
+	    authDomain: "thirdparty-5ba1d.firebaseapp.com",
+	    projectId: "thirdparty-5ba1d",
+	    storageBucket: "thirdparty-5ba1d.appspot.com",
+	    messagingSenderId: "457944062408",
+	    appId: "1:457944062408:web:09cf36f3f1ec0ca618c8fd",
+	    measurementId: "G-2GC43NCVG9"
+	  };
+	
+	  // Initialize Firebase
+	  const app = initializeApp(firebaseConfig);
+	  const analytics = getAnalytics(app);
+</script>
     <script>
         const allGroups = [
             [
@@ -486,38 +509,32 @@
         //    document.body.appendChild(link);
         //    link.click();
         //}
-        function downloadCSV() {
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += "participantId,videoId,diverted_attentive,unpleasant_pleasant,inert_expressive,cold_warm,incoherent_coherent,out_of_phase_in_phase,not_aligned_aligned_temporally,therapist_help_talk,therapist_help_hopeful,therapist_help_confident,client_collaborate_goals,client_mutual_goals,client_therapist_cares\n";
-            responses.forEach(response => {
-                csvContent += `${response.id},${response.videoId},${response.diverted_attentive || ''},${response.unpleasant_pleasant || ''},${response.inert_expressive || ''},${response.cold_warm || ''},${response.incoherent_coherent || ''},${response.out_of_phase_in_phase || ''},${response.not_aligned_aligned_temporally || ''},${response.therapist_help_talk || ''},${response.therapist_help_hopeful || ''},${response.therapist_help_confident || ''},${response.client_collaborate_goals || ''},${response.client_mutual_goals || ''},${response.client_therapist_cares || ''}\n`;
-            });
+      function saveToFirestore() {
+    let participantData = {
+        participantId: participantId,
+        responses: responses
+    };
 
-            const blob = new Blob([csvContent], { type: 'text/csv' });
-            const reader = new FileReader();
-            reader.onload = function (event) {
-                sendEmail(event.target.result);
-            };
-            reader.readAsDataURL(blob);
-        }
+    db.collection("participants").doc(participantId).set(participantData)
+    .then(function() {
+        console.log("Document successfully written!");
+        alert("Vos réponses ont été enregistrées en ligne.");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+        alert("Une erreur s'est produite lors de l'enregistrement de vos réponses.");
+    });
+}
 
-        function sendEmail(csvDataUrl) {
-            emailjs.init('VrpsiyFmZ4V84a2hm'); // Remplacez 'YOUR_USER_ID' par votre User ID EmailJS
+function downloadCSV() {
+    let csvContent = "participantId,videoId,diverted_attentive,unpleasant_pleasant,inert_expressive,cold_warm,incoherent_coherent,out_of_phase_in_phase,not_aligned_aligned_temporally,therapist_help_talk,therapist_help_hopeful,therapist_help_confident,client_collaborate_goals,client_mutual_goals,client_therapist_cares\n";
+    responses.forEach(response => {
+        csvContent += `${response.id},${response.videoId},${response.diverted_attentive || ''},${response.unpleasant_pleasant || ''},${response.inert_expressive || ''},${response.cold_warm || ''},${response.incoherent_coherent || ''},${response.out_of_phase_in_phase || ''},${response.not_aligned_aligned_temporally || ''},${response.therapist_help_talk || ''},${response.therapist_help_hopeful || ''},${response.therapist_help_confident || ''},${response.client_collaborate_goals || ''},${response.client_mutual_goals || ''},${response.client_therapist_cares || ''}\n`;
+    });
 
-            const emailParams = {
-                to_email: 'younsi@isir.upmc.fr', // Remplacez par l'adresse email de destination
-                subject: `Results for ${participantId}`,
-                message: 'Please find the attached CSV file with the participant\'s results.',
-                attachment: csvDataUrl
-            };
+    saveToFirestore();
+}
 
-            emailjs.send('service_7uyumji', 'template_qczv46i', emailParams) // Remplacez 'YOUR_SERVICE_ID' et 'YOUR_TEMPLATE_ID' par vos IDs EmailJS
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                }, function (error) {
-                    console.log('FAILED...', error);
-                });
-        }
     </script>
 </body>
 </html>
