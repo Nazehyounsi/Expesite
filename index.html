@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expérience Vidéo</title>
@@ -46,7 +45,7 @@
         }
         .likert-container {
             display: grid;
-            grid-template-columns: auto repeat(8, 1fr) auto;
+            grid-template-columns: auto repeat(7, 1fr) auto;
             gap: 10px;
             align-items: center;
             margin-bottom: 20px;
@@ -107,7 +106,6 @@
                 <h3>Agent perception : Did you percieve that the agent was: </h3>
                 <div class="likert-container">
                     <div></div>
-                    <div>0</div>
                     <div>1</div>
                     <div>2</div>
                     <div>3</div>
@@ -118,8 +116,7 @@
                     <div></div>
 
                     <label>Diverted</label>
-                    <input type="radio" name="diverted_attentive" value="0" required>
-                    <input type="radio" name="diverted_attentive" value="1">
+                    <input type="radio" name="diverted_attentive" value="1" required>
                     <input type="radio" name="diverted_attentive" value="2">
                     <input type="radio" name="diverted_attentive" value="3">
                     <input type="radio" name="diverted_attentive" value="4">
@@ -129,8 +126,7 @@
                     <label>Attentive</label>
 
                     <label>Unpleasant</label>
-                    <input type="radio" name="unpleasant_pleasant" value="0" required>
-                    <input type="radio" name="unpleasant_pleasant" value="1">
+                    <input type="radio" name="unpleasant_pleasant" value="1" required>
                     <input type="radio" name="unpleasant_pleasant" value="2">
                     <input type="radio" name="unpleasant_pleasant" value="3">
                     <input type="radio" name="unpleasant_pleasant" value="4">
@@ -140,8 +136,7 @@
                     <label>Pleasant</label>
 
                     <label>Inert</label>
-                    <input type="radio" name="inert_expressive" value="0" required>
-                    <input type="radio" name="inert_expressive" value="1">
+                    <input type="radio" name="inert_expressive" value="1" required>
                     <input type="radio" name="inert_expressive" value="2">
                     <input type="radio" name="inert_expressive" value="3">
                     <input type="radio" name="inert_expressive" value="4">
@@ -151,8 +146,7 @@
                     <label>Expressive</label>
 
                     <label>Cold</label>
-                    <input type="radio" name="cold_warm" value="0" required>
-                    <input type="radio" name="cold_warm" value="1">
+                    <input type="radio" name="cold_warm" value="1" required>
                     <input type="radio" name="cold_warm" value="2">
                     <input type="radio" name="cold_warm" value="3">
                     <input type="radio" name="cold_warm" value="4">
@@ -165,7 +159,6 @@
                 <h3>Agent behavior : Did you feel that the agent behavior was :</h3>
                 <div class="likert-container">
                     <div></div>
-                    <div>0</div>
                     <div>1</div>
                     <div>2</div>
                     <div>3</div>
@@ -176,8 +169,7 @@
                     <div></div>
 
                     <label>Incoherent</label>
-                    <input type="radio" name="incoherent_coherent" value="0" required>
-                    <input type="radio" name="incoherent_coherent" value="1">
+                    <input type="radio" name="incoherent_coherent" value="1" required>
                     <input type="radio" name="incoherent_coherent" value="2">
                     <input type="radio" name="incoherent_coherent" value="3">
                     <input type="radio" name="incoherent_coherent" value="4">
@@ -187,8 +179,7 @@
                     <label>Coherent</label>
 
                     <label>Out of phase</label>
-                    <input type="radio" name="out_of_phase_in_phase" value="0" required>
-                    <input type="radio" name="out_of_phase_in_phase" value="1">
+                    <input type="radio" name="out_of_phase_in_phase" value="1" required>
                     <input type="radio" name="out_of_phase_in_phase" value="2">
                     <input type="radio" name="out_of_phase_in_phase" value="3">
                     <input type="radio" name="out_of_phase_in_phase" value="4">
@@ -198,8 +189,7 @@
                     <label>In phase</label>
 
                     <label>Not aligned</label>
-                    <input type="radio" name="not_aligned_aligned_temporally" value="0" required>
-                    <input type="radio" name="not_aligned_aligned_temporally" value="1">
+                    <input type="radio" name="not_aligned_aligned_temporally" value="1" required>
                     <input type="radio" name="not_aligned_aligned_temporally" value="2">
                     <input type="radio" name="not_aligned_aligned_temporally" value="3">
                     <input type="radio" name="not_aligned_aligned_temporally" value="4">
@@ -232,44 +222,44 @@
                 <h3>The therapist:</h3>
                 <label>Help you talk about changing your behavior</label>
                 <div class="slider-container">
-                    <span>0</span>
-                    <input type="range" name="therapist_help_talk" min="0" max="7" step="1" required>
+                    <span>1</span>
+                    <input type="range" name="therapist_help_talk" min="1" max="7" step="1" required>
                     <span>7</span>
                 </div>
 
                 <label>Help you feel hopeful about changing your behavior</label>
                 <div class="slider-container">
-                    <span>0</span>
-                    <input type="range" name="therapist_help_hopeful" min="0" max="7" step="1" required>
+                    <span>1</span>
+                    <input type="range" name="therapist_help_hopeful" min="1" max="7" step="1" required>
                     <span>7</span>
                 </div>
 
                 <label>Help you feel confident in your ability to change your behavior</label>
                 <div class="slider-container">
-                    <span>0</span>
-                    <input type="range" name="therapist_help_confident" min="0" max="7" step="1" required>
+                    <span>1</span>
+                    <input type="range" name="therapist_help_confident" min="1" max="7" step="1" required>
                     <span>7</span>
                 </div>
 
                 <h3>The client:</h3>
                 <label>I believe the therapist and I collaborate on setting goals for my therapy</label>
                 <div class="slider-container">
-                    <span>0</span>
-                    <input type="range" name="client_collaborate_goals" min="0" max="7" step="1" required>
+                    <span>1</span>
+                    <input type="range" name="client_collaborate_goals" min="1" max="7" step="1" required>
                     <span>7</span>
                 </div>
 
                 <label>I believe the therapist and I are working towards mutually agreed-upon goals</label>
                 <div class="slider-container">
-                    <span>0</span>
-                    <input type="range" name="client_mutual_goals" min="0" max="7" step="1" required>
+                    <span>1</span>
+                    <input type="range" name="client_mutual_goals" min="1" max="7" step="1" required>
                     <span>7</span>
                 </div>
 
                 <label>I feel the therapist cares about me even when I do things that he/she does not approve of</label>
                 <div class="slider-container">
-                    <span>0</span>
-                    <input type="range" name="client_therapist_cares" min="0" max="7" step="1" required>
+                    <span>1</span>
+                    <input type="range" name="client_therapist_cares" min="1" max="7" step="1" required>
                     <span>7</span>
                 </div>
                 <button type="button" onclick="nextSecondPartVideo()">Suivant</button>
@@ -281,31 +271,23 @@
         <h1>Merci pour votre participation !</h1>
         <p>Vos réponses ont été enregistrées.</p>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
     <script type="module">
-	  // Import the functions you need from the SDKs you need
-	  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-	  // TODO: Add SDKs for Firebase products that you want to use
-	  // https://firebase.google.com/docs/web/setup#available-libraries
-	
-	  // Your web app's Firebase configuration
-	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	  const firebaseConfig = {
-	    apiKey: "AIzaSyDj0L32CgxECBVLdqK2lxvcmwGWMEEEmuk",
-	    authDomain: "thirdparty-5ba1d.firebaseapp.com",
-	    projectId: "thirdparty-5ba1d",
-	    storageBucket: "thirdparty-5ba1d.appspot.com",
-	    messagingSenderId: "457944062408",
-	    appId: "1:457944062408:web:09cf36f3f1ec0ca618c8fd",
-	    measurementId: "G-2GC43NCVG9"
-	  };
-	
-	  // Initialize Firebase
-	  const app = initializeApp(firebaseConfig);
-	  const analytics = getAnalytics(app);
-</script>
-    <script>
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDj0L32CgxECBVLdqK2lxvcmwGWMEEEmuk",
+            authDomain: "thirdparty-5ba1d.firebaseapp.com",
+            projectId: "thirdparty-5ba1d",
+            storageBucket: "thirdparty-5ba1d.appspot.com",
+            messagingSenderId: "457944062408",
+            appId: "1:457944062408:web:09cf36f3f1ec0ca618c8fd",
+            measurementId: "G-2GC43NCVG9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
         const allGroups = [
             [
                 { id: 'video1_GT', videoId: '1S9dTBlC_7BgyrCR3-tlJ0wX4kd2pqLEA' },
@@ -317,58 +299,52 @@
                 { id: 'video2_Model', videoId: '1cou50tpz7H4p55uEIOzHlzuvLziAQCm7' },
                 { id: 'video2_Random', videoId: '1z0NdakSqYzrzPhezq_mJe3f1jWar1_LT' }
             ],
-			[
-			
+            [
                 { id: 'video3_GT', videoId: '1byN_WJzaxdPJIwwGuQmX832J3mqzyZt8' },
                 { id: 'video3_Model', videoId: '1h32hRxxTAWBc21rPYpOHVlHpV_g1TB1J' },
                 { id: 'video3_Random', videoId: '11QyQZj4fXpyUwy-RcR671dmUSVMmrRz3' }
             ],
-			[
-			
+            [
                 { id: 'video4_GT', videoId: '1FSECLcS61wX3sRdG7t8gwV0hg0mgsYCc' },
                 { id: 'video4_Model', videoId: '1o3DBiskq6Z6kDoq_696rEL6Cu57Z4eHl' },
                 { id: 'video4_Random', videoId: '1kfzKJxN85KPV06EO-wxGw9Y69GowfavZ' }
             ],
-			[
+            [
                 { id: 'video5_GT', videoId: '1CvofeO1WEL4OedcWPstie4bXs5y2RrJE' },
                 { id: 'video5_Model', videoId: '1Zg1OiVdVRpWe_XLSllfBBPE1j9nDKxPA' },
                 { id: 'video5_Random', videoId: '1qbpotXBm2VVsaJ4uyJLbiqxbsO1AZ1Qm' }
             ],
-			[
-
+            [
                 { id: 'video6GT', videoId: '1huIaWaBK0xTONwQsUODiH0ksrlxPyVac' },
                 { id: 'video6_Model', videoId: '1N8fVMzsluVojiZ1jKBxiOIFMZOM7kPlf' },
                 { id: 'video6_Random', videoId: '1dahWRP7nMVqpR-9ttm6ptHkV03wa1SpW' }
             ],
-			[
+            [
                 { id: 'video7_GT', videoId: '1OrSoAMaqeXXL56P3A3bTISMoXqxZED2L' },
                 { id: 'video7_Model', videoId: '1rnhPkoetoUEqwyPtFYi1N_rX4L5Fw-Qa' },
                 { id: 'video7_Random', videoId: '1vbbB_y7elWE2-C8EOq28o5Z9jRIqucaj' }
             ],
-			[
-
+            [
                 { id: 'video8_GT', videoId: '1P9eRNPKRHmchuy9ABuCZ9nzeBenu2ysq' },
                 { id: 'video8_Model', videoId: '10jve49ZbH3ONr2KdMGGWLWGLO1dtDc0s' },
                 { id: 'video8_Random', videoId: '1f7agIYEroqKzFRSv43-mGH2Zc6JDoAGW' }
             ],
-			[
-
+            [
                 { id: 'video9_GT', videoId: '1CpjYrM9zy_6_0Xn46oYmG-S3prUjoa4P' },
                 { id: 'video9_Model', videoId: '15h82VAD1Aqqd5g9K5Tqb8Vhh4BkAsHu1' },
                 { id: 'video9_Random', videoId: '1NIcighnUMKCUz-zxUDh6qMozMdixxsNa' }
             ],
-			
-			[
+            [
                 { id: 'video10_GT', videoId: '1Ki5UwK9OLbXTEhRCnpWJF7uvEv2mYJG3' },
                 { id: 'video10_Model', videoId: '1tlCBNrtP1I_b0W3UWtYhu2pgiKi6sqar' },
-                { id: 'video10_Random', videoId: '1kthN-Y2FSe6ElzCVWl3Yxowqvy4uZm-c'}
-			],
-			[
+                { id: 'video10_Random', videoId: '1kthN-Y2FSe6ElzCVWl3Yxowqvy4uZm-c' }
+            ],
+            [
                 { id: 'video11_GT', videoId: '1XZcptlxwpp_YeghHtksMzR_0_OFWzsuL' },
                 { id: 'video11_Model', videoId: '1Bhr5OA29pPcxHDLT63r5JiTUN2tyuY0l' },
                 { id: 'video11_Random', videoId: '192xOyJYY4xwcsZFQzevl3TPTywaRB6LB' }
             ],
-			[
+            [
                 { id: 'video12_GT', videoId: '11br7ZVyK_g58oIn6_y7rTnCpz4x4E56lp' },
                 { id: 'video12_Model', videoId: '1nUmjx5pKwEbTSbKRDrANvR51uKWQTO3H' },
                 { id: 'video12_Random', videoId: '1L4zhmjKzVJmeP_XQN6BSwmVZK2CC2r0G' }
@@ -393,6 +369,14 @@
         let participantId = generateParticipantId();
         let responses = [];
 
+        window.startExperience = function startExperience() {
+            const selectedGroups = getRandomGroups();
+            selectedVideos = flattenAndRandomize(selectedGroups);
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('videoPage').classList.remove('hidden');
+            loadVideo();
+        }
+
         function generateParticipantId() {
             return 'participant_' + Math.floor(Math.random() * 100000);
         }
@@ -410,21 +394,13 @@
             return videos.sort(() => 0.5 - Math.random());
         }
 
-        function startExperience() {
-            const selectedGroups = getRandomGroups();
-            selectedVideos = flattenAndRandomize(selectedGroups);
-            document.getElementById('homePage').classList.add('hidden');
-            document.getElementById('videoPage').classList.remove('hidden');
-            loadVideo();
-        }
-
         function loadVideo() {
             const video = selectedVideos[currentVideoIndex];
             const videoPlayer = document.getElementById('videoPlayer');
             videoPlayer.innerHTML = `<iframe src="https://drive.google.com/file/d/${video.videoId}/preview" allowfullscreen></iframe>`;
         }
 
-        function nextVideo() {
+        window.nextVideo = function nextVideo() {
             const form = document.getElementById('questionForm');
             if (!form.checkValidity()) {
                 alert('Veuillez répondre à toutes les questions.');
@@ -452,7 +428,7 @@
             document.getElementById('endFirstPartPage').classList.remove('hidden');
         }
 
-        function startSecondPart() {
+        window.startSecondPart = function startSecondPart() {
             secondPartSelectedVideos = secondPartVideos.sort(() => 0.5 - Math.random()).slice(0, 3);
             currentVideoIndex = 0;
             document.getElementById('endFirstPartPage').classList.add('hidden');
@@ -466,7 +442,7 @@
             videoPlayer.innerHTML = `<iframe src="https://drive.google.com/file/d/${video.videoId}/preview" allowfullscreen></iframe>`;
         }
 
-        function nextSecondPartVideo() {
+        window.nextSecondPartVideo = function nextSecondPartVideo() {
             const form = document.getElementById('secondPartQuestionForm');
             if (!form.checkValidity()) {
                 alert('Veuillez répondre à toutes les questions.');
@@ -489,52 +465,27 @@
             }
         }
 
+        async function saveToFirestore() {
+            let participantData = {
+                participantId: participantId,
+                responses: responses
+            };
+
+            try {
+                await setDoc(doc(db, "participants", participantId), participantData);
+                console.log("Document successfully written!");
+                alert("Vos réponses ont été enregistrées en ligne.");
+            } catch (error) {
+                console.error("Error writing document: ", error);
+                alert("Une erreur s'est produite lors de l'enregistrement de vos réponses.");
+            }
+        }
+
         function endExperience() {
             document.getElementById('secondPartPage').classList.add('hidden');
             document.getElementById('endPage').classList.remove('hidden');
-            downloadCSV();
+            saveToFirestore();
         }
-
-        //function downloadCSV() {
-        //    let csvContent = "data:text/csv;charset=utf-8,";
-        //    csvContent += "participantId,videoId,diverted_attentive,unpleasant_pleasant,inert_expressive,cold_warm,incoherent_coherent,out_of_phase_in_phase,not_aligned_aligned_temporally,therapist_help_talk,therapist_help_hopeful,therapist_help_confident,client_collaborate_goals,client_mutual_goals,client_therapist_cares\n";
-        //    responses.forEach(response => {
-        //        csvContent += `${response.id},${response.videoId},${response.diverted_attentive || ''},${response.unpleasant_pleasant || ''},${response.inert_expressive || ''},${response.cold_warm || ''},${response.incoherent_coherent || ''},${response.out_of_phase_in_phase || ''},${response.not_aligned_aligned_temporally || ''},${response.therapist_help_talk || ''},${response.therapist_help_hopeful || ''},${response.therapist_help_confident || ''},${response.client_collaborate_goals || ''},${response.client_mutual_goals || ''},${response.client_therapist_cares || ''}\n`;
-        //    });
-
-        //    const encodedUri = encodeURI(csvContent);
-        //    const link = document.createElement("a");
-        //    link.setAttribute("href", encodedUri);
-        //    link.setAttribute("download", "responses.csv");
-        //    document.body.appendChild(link);
-        //    link.click();
-        //}
-      function saveToFirestore() {
-    let participantData = {
-        participantId: participantId,
-        responses: responses
-    };
-
-    db.collection("participants").doc(participantId).set(participantData)
-    .then(function() {
-        console.log("Document successfully written!");
-        alert("Vos réponses ont été enregistrées en ligne.");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-        alert("Une erreur s'est produite lors de l'enregistrement de vos réponses.");
-    });
-}
-
-function downloadCSV() {
-    let csvContent = "participantId,videoId,diverted_attentive,unpleasant_pleasant,inert_expressive,cold_warm,incoherent_coherent,out_of_phase_in_phase,not_aligned_aligned_temporally,therapist_help_talk,therapist_help_hopeful,therapist_help_confident,client_collaborate_goals,client_mutual_goals,client_therapist_cares\n";
-    responses.forEach(response => {
-        csvContent += `${response.id},${response.videoId},${response.diverted_attentive || ''},${response.unpleasant_pleasant || ''},${response.inert_expressive || ''},${response.cold_warm || ''},${response.incoherent_coherent || ''},${response.out_of_phase_in_phase || ''},${response.not_aligned_aligned_temporally || ''},${response.therapist_help_talk || ''},${response.therapist_help_hopeful || ''},${response.therapist_help_confident || ''},${response.client_collaborate_goals || ''},${response.client_mutual_goals || ''},${response.client_therapist_cares || ''}\n`;
-    });
-
-    saveToFirestore();
-}
-
     </script>
 </body>
 </html>
