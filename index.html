@@ -21,10 +21,10 @@
             border-radius: 8px;
         }
         h1, h2, h3 {
-            color: 	#06101E;
+            color:  #06101E;
         }
         button {
-            background-color: 	#2C60A8;
+            background-color:  #2C60A8;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -70,29 +70,29 @@
         .hidden {
             display: none;
         }
-        .slider-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .slider-container input[type=range] {
-            flex-grow: 1;
-            margin: 0 10px;
-        }
-        .slider-container span {
-            width: 30px;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
-    <div class="container" id="homePage">
+    <div class="container" id="ethicsPage">
+        <h1>Déclarations éthiques</h1>
+        <p>Veuillez lire attentivement les déclarations éthiques avant de continuer.</p>
+        <p>[Insérez les déclarations éthiques ici]</p>
+        <button onclick="goToStudyPurpose()">Suivant</button>
+    </div>
+
+    <div class="container hidden" id="studyPurposePage">
+        <h1>Objectif de l'étude</h1>
+        <p>Cette étude vise à [décrire l'objectif de l'étude].</p>
+        <button onclick="goToInstructions()">Suivant</button>
+    </div>
+
+    <div class="container hidden" id="homePage">
         <h1>Bienvenue à notre expérience</h1>
         <p>Description de l'expérience et instructions à suivre.</p>
         <p>Veuillez suivre les instructions ci-dessous pour participer à l'expérience.</p>
         <ul>
             <li>Regardez chaque vidéo attentivement.</li>
-            <li>Répondez aux questions sous chaque vidéo en utilisant l'échelle de 0 à 7.</li>
+            <li>Répondez aux questions sous chaque vidéo en utilisant l'échelle de 1 à 7.</li>
             <li>Cliquez sur "Suivant" pour passer à la vidéo suivante.</li>
         </ul>
         <button onclick="startExperience()">Commencer l'expérience</button>
@@ -101,9 +101,9 @@
     <div class="container hidden" id="videoPage">
         <div id="videoPlayer" class="video-container"></div>
         <div id="questionnaire">
-            <h2>Questionnaire</h2>
+            <h2> </h2>
             <form id="questionForm">
-                <h3>Agent perception : Did you percieve that the agent was: </h3>
+                <h3>How did you perceive the agent?</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -156,7 +156,7 @@
                     <label>Warm</label>
                 </div>
 
-                <h3>Agent behavior : Did you feel that the agent behavior was :</h3>
+                <h3>How would you characterize the agent’s behavior?</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -217,50 +217,138 @@
     <div class="container hidden" id="secondPartPage">
         <div id="secondPartVideoPlayer" class="video-container"></div>
         <div id="secondPartQuestionnaire">
-            <h2>Questionnaire</h2>
+            <h2> How much do you agree with the following statements:</h2>
             <form id="secondPartQuestionForm">
-                <h3>The therapist:</h3>
-                <label>Help you talk about changing your behavior</label>
-                <div class="slider-container">
-                    <span>1</span>
-                    <input type="range" name="therapist_help_talk" min="1" max="7" step="1" required>
-                    <span>7</span>
+                <h3>The therapist helps the client to change behavior</h3>
+                <div class="likert-container">
+                    <div></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div></div>
+
+                    <label>Not at all</label>
+                    <input type="radio" name="therapist_help_talk" value="1" required>
+                    <input type="radio" name="therapist_help_talk" value="2">
+                    <input type="radio" name="therapist_help_talk" value="3">
+                    <input type="radio" name="therapist_help_talk" value="4">
+                    <input type="radio" name="therapist_help_talk" value="5">
+                    <input type="radio" name="therapist_help_talk" value="6">
+                    <input type="radio" name="therapist_help_talk" value="7">
+                    <label>Completely</label>
+				</div>
+				<h3>The therapist helps the client to feel hopeful about changing behavior</h3>
+                <div class="likert-container">
+                    <div></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div></div>
+				
+                    <label>Not at all</label>
+                    <input type="radio" name="therapist_help_hopeful" value="1" required>
+                    <input type="radio" name="therapist_help_hopeful" value="2">
+                    <input type="radio" name="therapist_help_hopeful" value="3">
+                    <input type="radio" name="therapist_help_hopeful" value="4">
+                    <input type="radio" name="therapist_help_hopeful" value="5">
+                    <input type="radio" name="therapist_help_hopeful" value="6">
+                    <input type="radio" name="therapist_help_hopeful" value="7">
+                    <label>Completely</label>
+				</div>
+				<h3>The therapist Helps the client to feel confident in his/her ability to change behavior</h3>
+                <div class="likert-container">
+                    <div></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div></div>
+				
+                    <label>Not at all</label>
+                    <input type="radio" name="therapist_help_confident" value="1" required>
+                    <input type="radio" name="therapist_help_confident" value="2">
+                    <input type="radio" name="therapist_help_confident" value="3">
+                    <input type="radio" name="therapist_help_confident" value="4">
+                    <input type="radio" name="therapist_help_confident" value="5">
+                    <input type="radio" name="therapist_help_confident" value="6">
+                    <input type="radio" name="therapist_help_confident" value="7">
+                    <label>Completely</label>
                 </div>
 
-                <label>Help you feel hopeful about changing your behavior</label>
-                <div class="slider-container">
-                    <span>1</span>
-                    <input type="range" name="therapist_help_hopeful" min="1" max="7" step="1" required>
-                    <span>7</span>
-                </div>
+                <h3>The therapist and the client collaborates on setting goals for the therapy</h3>
+                <div class="likert-container">
+                    <div></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div></div>
 
-                <label>Help you feel confident in your ability to change your behavior</label>
-                <div class="slider-container">
-                    <span>1</span>
-                    <input type="range" name="therapist_help_confident" min="1" max="7" step="1" required>
-                    <span>7</span>
-                </div>
-
-                <h3>The client:</h3>
-                <label>I believe the therapist and I collaborate on setting goals for my therapy</label>
-                <div class="slider-container">
-                    <span>1</span>
-                    <input type="range" name="client_collaborate_goals" min="1" max="7" step="1" required>
-                    <span>7</span>
-                </div>
-
-                <label>I believe the therapist and I are working towards mutually agreed-upon goals</label>
-                <div class="slider-container">
-                    <span>1</span>
-                    <input type="range" name="client_mutual_goals" min="1" max="7" step="1" required>
-                    <span>7</span>
-                </div>
-
-                <label>I feel the therapist cares about me even when I do things that he/she does not approve of</label>
-                <div class="slider-container">
-                    <span>1</span>
-                    <input type="range" name="client_therapist_cares" min="1" max="7" step="1" required>
-                    <span>7</span>
+                    <label>Not at all</label>
+                    <input type="radio" name="client_collaborate_goals" value="1" required>
+                    <input type="radio" name="client_collaborate_goals" value="2">
+                    <input type="radio" name="client_collaborate_goals" value="3">
+                    <input type="radio" name="client_collaborate_goals" value="4">
+                    <input type="radio" name="client_collaborate_goals" value="5">
+                    <input type="radio" name="client_collaborate_goals" value="6">
+                    <input type="radio" name="client_collaborate_goals" value="7">
+                    <label>Completely</label>
+				</div>
+				<h3>The therapist and the client are working towards mutually agreed-upon goals</h3>
+                <div class="likert-container">
+                    <div></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div></div>
+                    <label>Not at all</label>
+                    <input type="radio" name="client_mutual_goals" value="1" required>
+                    <input type="radio" name="client_mutual_goals" value="2">
+                    <input type="radio" name="client_mutual_goals" value="3">
+                    <input type="radio" name="client_mutual_goals" value="4">
+                    <input type="radio" name="client_mutual_goals" value="5">
+                    <input type="radio" name="client_mutual_goals" value="6">
+                    <input type="radio" name="client_mutual_goals" value="7">
+                    <label>Completely</label>
+				</div>
+				<h3>The therapist cares about the client even when he/she does things that the therapist does not approve of</h3>
+                <div class="likert-container">
+                    <div></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div></div>
+                    <label>Not at all</label>
+                    <input type="radio" name="client_therapist_cares" value="1" required>
+                    <input type="radio" name="client_therapist_cares" value="2">
+                    <input type="radio" name="client_therapist_cares" value="3">
+                    <input type="radio" name="client_therapist_cares" value="4">
+                    <input type="radio" name="client_therapist_cares" value="5">
+                    <input type="radio" name="client_therapist_cares" value="6">
+                    <input type="radio" name="client_therapist_cares" value="7">
+                    <label>Completely</label>
                 </div>
                 <button type="button" onclick="nextSecondPartVideo()">Suivant</button>
             </form>
@@ -368,6 +456,16 @@
         let currentVideoIndex = 0;
         let participantId = generateParticipantId();
         let responses = [];
+
+        window.goToStudyPurpose = function goToStudyPurpose() {
+            document.getElementById('ethicsPage').classList.add('hidden');
+            document.getElementById('studyPurposePage').classList.remove('hidden');
+        }
+
+        window.goToInstructions = function goToInstructions() {
+            document.getElementById('studyPurposePage').classList.add('hidden');
+            document.getElementById('homePage').classList.remove('hidden');
+        }
 
         window.startExperience = function startExperience() {
             const selectedGroups = getRandomGroups();
