@@ -74,28 +74,37 @@
 </head>
 <body>
     <div class="container" id="ethicsPage">
-        <h1>Déclarations éthiques</h1>
-        <p>Veuillez lire attentivement les déclarations éthiques avant de continuer.</p>
-        <p>[Insérez les déclarations éthiques ici]</p>
+        <h1>Copyrights</h1>
+        <p>By undertaking this job, you declare that you understand, agree and fully accept to abide to the conditions below:</p>
+        <p>All material on this page, including, videos, text is covered by Copyright. You may not copy, reproduce, distribute, publish, display, perform, modify, create derivative works, transmit, or in any way exploit any content on this page, nor may you distribute any part of this content over any network, including a local area network, sell or offer it for sale, or use such content to construct any kind of database. Retrieving, copying, or distributing these files violates the copyright protection law. You must abide international law in accessing this directory.
+</p>     
+        <p>By accepting to provide consent you state that you are 18 years or older.</p>
         <button onclick="goToStudyPurpose()">Suivant</button>
     </div>
 
     <div class="container hidden" id="studyPurposePage">
-        <h1>Objectif de l'étude</h1>
-        <p>Cette étude vise à [décrire l'objectif de l'étude].</p>
-        <button onclick="goToInstructions()">Suivant</button>
+        <h1>Thank you for considering participating in this study</h1>
+        <p>The purpose of this study is to evaluate a facial expression generation model for virtual agents in the context of Motivational interviewing.
+During this study, you will be asked to watch videos and fill out questionnaires.</p>
+		<p>All information you provide will be confidential and your anonymity will be protected throughout the study. No information that would allow identifying you or tracing you back will be collected (name, e-mail, IP addresses...).  The collected data may contribute to research publications and/or conference presentations. If you have any questions regarding this study you can contact the researchers before starting the study.</p>
+        <p> Contact : 
+Nezih Younsi (younsi@isir.upmc.fr)
+Catherine Pelachaud (catherine.pelachaud@upmc.fr)
+Laurence Chaby(Chaby@isir.upmc.fr)</p>
+		<button onclick="goToInstructions()">Next</button>
     </div>
 
     <div class="container hidden" id="homePage">
-        <h1>Bienvenue à notre expérience</h1>
-        <p>Description de l'expérience et instructions à suivre.</p>
-        <p>Veuillez suivre les instructions ci-dessous pour participer à l'expérience.</p>
+        <h1>Perceptual study</h1>
+        <p>This study includes two different phases of evaluation. Both phases consist on watching videos that features an interactions between a virtual counselor and a human client.
+After watching each video, you will be asked to answer to questions related to the displayed interaction.</p>
+        <p>The first phase include 15 thin video slices</p>
         <ul>
-            <li>Regardez chaque vidéo attentivement.</li>
-            <li>Répondez aux questions sous chaque vidéo en utilisant l'échelle de 1 à 7.</li>
-            <li>Cliquez sur "Suivant" pour passer à la vidéo suivante.</li>
+            <li>Please watch attentively each video.</li>
+            <li>Answer to each item on a scale going from 1 to 7</li>
+            <li>Click on the "Next" button to see the next video</li>
         </ul>
-        <button onclick="startExperience()">Commencer l'expérience</button>
+        <button onclick="startExperience()">Start the study</button>
     </div>
 
     <div class="container hidden" id="videoPage">
@@ -198,20 +207,21 @@
                     <input type="radio" name="not_aligned_aligned_temporally" value="7">
                     <label>Aligned temporally</label>
                 </div>
-                <button type="button" onclick="nextVideo()">Suivant</button>
+                <button type="button" onclick="nextVideo()">Next</button>
             </form>
         </div>
     </div>
 
     <div class="container hidden" id="endFirstPartPage">
-        <h1>Fin de la première partie</h1>
-        <p>Vous avez terminé la première partie de l'expérience.</p>
-        <p>Instructions pour la deuxième partie :</p>
+        <h1>Second Phase</h1>
+        <p>You have succesfully finished the first phase</p>
+        <p>Instruction of the second phase: </p>
         <ul>
-            <li>Vous allez maintenant regarder trois autres vidéos.</li>
-            <li>Après chaque vidéo, vous devrez répondre à un questionnaire similaire au premier.</li>
+            <li>You are now going to watch three videos, that features longer interactions between the virtual counselor and human clients.</li>
+            <li>After attentively watching each video, asnwer to each item on scale from 1 to 7.</li>
+			<li>Click on the "Next" button to watch the next video.</li>
         </ul>
-        <button onclick="startSecondPart()">Commencer la deuxième partie</button>
+        <button onclick="startSecondPart()">Start the second phase</button>
     </div>
 
     <div class="container hidden" id="secondPartPage">
@@ -240,8 +250,8 @@
                     <input type="radio" name="therapist_help_talk" value="6">
                     <input type="radio" name="therapist_help_talk" value="7">
                     <label>Completely</label>
-		</div>
-		<h3>The therapist helps the client to feel hopeful about changing behavior</h3>
+				</div>
+				<h3>The therapist helps the client to feel hopeful about changing behavior</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -262,8 +272,8 @@
                     <input type="radio" name="therapist_help_hopeful" value="6">
                     <input type="radio" name="therapist_help_hopeful" value="7">
                     <label>Completely</label>
-		</div>
-		<h3>The therapist Helps the client to feel confident in his/her ability to change behavior</h3>
+				</div>
+				<h3>The therapist Helps the client to feel confident in his/her ability to change behavior</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -307,8 +317,8 @@
                     <input type="radio" name="client_collaborate_goals" value="6">
                     <input type="radio" name="client_collaborate_goals" value="7">
                     <label>Completely</label>
-		</div>
-		<h3>The therapist and the client are working towards mutually agreed-upon goals</h3>
+				</div>
+				<h3>The therapist and the client are working towards mutually agreed-upon goals</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -328,8 +338,8 @@
                     <input type="radio" name="client_mutual_goals" value="6">
                     <input type="radio" name="client_mutual_goals" value="7">
                     <label>Completely</label>
-		</div>
-	        <h3>The therapist cares about the client even when he/she does things that the therapist does not approve of</h3>
+				</div>
+				<h3>The therapist cares about the client even when he/she does things that the therapist does not approve of</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -350,14 +360,14 @@
                     <input type="radio" name="client_therapist_cares" value="7">
                     <label>Completely</label>
                 </div>
-                <button type="button" onclick="nextSecondPartVideo()">Suivant</button>
+                <button type="button" onclick="nextSecondPartVideo()">Next</button>
             </form>
         </div>
     </div>
 
     <div class="container hidden" id="endPage">
-        <h1>Merci pour votre participation !</h1>
-        <p>Vos réponses ont été enregistrées.</p>
+        <h1>Thank you for your participation</h1>
+        <p>Your answers were succesfully saved</p>
     </div>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
@@ -572,10 +582,10 @@
             try {
                 await setDoc(doc(db, "participants", participantId), participantData);
                 console.log("Document successfully written!");
-                alert("Vos réponses ont été enregistrées en ligne.");
+                alert("Your answers were successfully written");
             } catch (error) {
                 console.error("Error writing document: ", error);
-                alert("Une erreur s'est produite lors de l'enregistrement de vos réponses.");
+                alert("An error happened during data registration");
             }
         }
 
