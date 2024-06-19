@@ -491,7 +491,7 @@ After watching each video, you will be asked to answer to questions related to t
 
         function getRandomGroups() {
             const shuffled = allGroups.sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, 5);
+            return shuffled.slice(0, 4);
         }
 
         function flattenAndRandomize(groups) {
@@ -536,13 +536,28 @@ After watching each video, you will be asked to answer to questions related to t
             document.getElementById('endFirstPartPage').classList.remove('hidden');
         }
 
-        window.startSecondPart = function startSecondPart() {
-            secondPartSelectedVideos = secondPartVideos.sort(() => 0.5 - Math.random()).slice(0, 3);
-            currentVideoIndex = 0;
-            document.getElementById('endFirstPartPage').classList.add('hidden');
-            document.getElementById('secondPartPage').classList.remove('hidden');
-            loadSecondPartVideo();
-        }
+	    window.startSecondPart = function startSecondPart() {
+			// Filter videos by type
+			const modelVideos = secondPartVideos.filter(video => video.id.includes('Model'));
+			const randomVideos = secondPartVideos.filter(video => video.id.includes('Random'));
+			const gtVideos = secondPartVideos.filter(video => video.id.includes('GT'));
+
+			// Randomly select one video from each category
+			const selectedModelVideo = modelVideos[Math.floor(Math.random() * modelVideos.length)];
+			const selectedRandomVideo = randomVideos[Math.floor(Math.random() * randomVideos.length)];
+			const selectedGtVideo = gtVideos[Math.floor(Math.random() * gtVideos.length)];
+
+			// Combine selected videos
+			secondPartSelectedVideos = [selectedModelVideo, selectedRandomVideo, selectedGtVideo];
+
+			// Shuffle the selected videos
+			secondPartSelectedVideos = secondPartSelectedVideos.sort(() => 0.5 - Math.random());
+
+			currentVideoIndex = 0;
+			document.getElementById('endFirstPartPage').classList.add('hidden');
+			document.getElementById('secondPartPage').classList.remove('hidden');
+			loadSecondPartVideo();
+		}
 
         function loadSecondPartVideo() {
             const video = secondPartSelectedVideos[currentVideoIndex];
@@ -582,10 +597,10 @@ After watching each video, you will be asked to answer to questions related to t
             try {
                 await setDoc(doc(db, "participants", participantId), participantData);
                 console.log("Document successfully written!");
-                alert("Your answers were successfully written");
+                alert("Vos réponses ont été enregistrées en ligne.");
             } catch (error) {
                 console.error("Error writing document: ", error);
-                alert("An error happened during data registration");
+                alert("Une erreur s'est produite lors de l'enregistrement de vos réponses.");
             }
         }
 
