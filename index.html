@@ -61,6 +61,14 @@
             height: 400px;
             margin-bottom: 20px;
         }
+	 .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 75%;
+            height: auto;
+        }
         iframe {
             width: 100%;
             height: 100%;
@@ -84,7 +92,7 @@
 
     <div class="container hidden" id="studyPurposePage">
         <h1>Thank you for considering participating in this study</h1>
-        <p>The purpose of this study is to evaluate a facial expression generation model for virtual agents in the context of Motivational interviewing.
+        <p>The purpose of this study is to <B>evaluate a facial expression generation model for virtual counselors</B> in the context of <B>Motivational interviewing</B>.
 During this study, you will be asked to watch videos and fill out questionnaires.</p>
 		<p>All information you provide will be confidential and your anonymity will be protected throughout the study. No information that would allow identifying you or tracing you back will be collected (name, e-mail, IP addresses...).  The collected data may contribute to research publications and/or conference presentations. If you have any questions regarding this study you can contact the researchers before starting the study.</p>
         <p> Contact : 
@@ -98,12 +106,16 @@ Laurence Chaby(Chaby@isir.upmc.fr)</p>
         <h1>Perceptual study</h1>
         <p>This study includes two different phases of evaluation. Both phases consist on watching videos that features an interactions between a virtual counselor and a human client.
 After watching each video, you will be asked to answer to questions related to the displayed interaction.</p>
-        <p>The first phase include 15 thin video slices</p>
+        <p>The first phase include 12 short videos of different interactions between a virtual counselor and a human client</p>
         <ul>
             <li>Please watch attentively each video.</li>
             <li>Answer to each item on a scale going from 1 to 7</li>
             <li>Click on the "Next" button to see the next video</li>
         </ul>
+	
+	<div class="image-container">
+            <img src="https://i.imgur.com/jwJ2Fq6.png" alt="Virtual counselor and Human">
+        </div>
         <button onclick="startExperience()">Start the study</button>
     </div>
 
@@ -112,7 +124,8 @@ After watching each video, you will be asked to answer to questions related to t
         <div id="questionnaire">
             <h2> </h2>
             <form id="questionForm">
-                <h3>How did you perceive the agent?</h3>
+                <h3>How did you perceive the virtual counselor’s attitude towards the human?
+</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -165,7 +178,7 @@ After watching each video, you will be asked to answer to questions related to t
                     <label>Warm</label>
                 </div>
 
-                <h3>How would you characterize the agent’s behavior?</h3>
+                <h3>How do you characterize the virtual counselor’s facial expressions?</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -229,7 +242,7 @@ After watching each video, you will be asked to answer to questions related to t
         <div id="secondPartQuestionnaire">
             <h2> How much do you agree with the following statements:</h2>
             <form id="secondPartQuestionForm">
-                <h3>The therapist helps the client to change behavior</h3>
+                <h3>The virtual counselor helps the human to <B>change behavior</B></h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -251,7 +264,7 @@ After watching each video, you will be asked to answer to questions related to t
                     <input type="radio" name="therapist_help_talk" value="7">
                     <label>Completely</label>
 				</div>
-				<h3>The therapist helps the client to feel hopeful about changing behavior</h3>
+				<h3>The virtual counselor helps the human to <B>feel hopeful</B> about changing behavior</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -273,7 +286,7 @@ After watching each video, you will be asked to answer to questions related to t
                     <input type="radio" name="therapist_help_hopeful" value="7">
                     <label>Completely</label>
 				</div>
-				<h3>The therapist Helps the client to feel confident in his/her ability to change behavior</h3>
+				<h3>The virtual counselor helps the human to feel confident in his/her ability to <B>change behavior</B> </h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -296,7 +309,7 @@ After watching each video, you will be asked to answer to questions related to t
                     <label>Completely</label>
                 </div>
 
-                <h3>The therapist and the client collaborates on setting goals for the therapy</h3>
+                <h3>The virtual counselor and the human <B>collaborates</B> on setting goals for the therapy</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -318,7 +331,7 @@ After watching each video, you will be asked to answer to questions related to t
                     <input type="radio" name="client_collaborate_goals" value="7">
                     <label>Completely</label>
 				</div>
-				<h3>The therapist and the client are working towards mutually agreed-upon goals</h3>
+				<h3>The virtual counselor and the human are working towards <B>mutually</B> agreed-upon goals</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
@@ -339,7 +352,7 @@ After watching each video, you will be asked to answer to questions related to t
                     <input type="radio" name="client_mutual_goals" value="7">
                     <label>Completely</label>
 				</div>
-				<h3>The therapist cares about the client even when he/she does things that the therapist does not approve of</h3>
+				<h3>The virtual counselor <B>cares about</B> the human even when he/she does things that the virtual counselor does not approve of</h3>
                 <div class="likert-container">
                     <div></div>
                     <div>1</div>
